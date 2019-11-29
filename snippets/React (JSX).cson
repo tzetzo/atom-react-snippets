@@ -56,7 +56,7 @@
     body: "export default ${1};"
 
   "React: componentDidMount() { ... }":
-    prefix: "_cdm"
+    prefix: "cccc"
     body: "componentDidMount() {\n\t${1}\n}${2}"
 
   "React: componentWillMount() { ... }":
@@ -192,7 +192,7 @@
     body: "<React.Fragment>\n\t$1\n</React.Fragment>"
 
   "React: constructor(props)":
-    prefix: "_cns"
+    prefix: "ccc"
     body: "constructor(props) {\n\tsuper(props);\n\t${1:this.state = ${2};}\n}"
 
   "React: class Foo extends Bar":
