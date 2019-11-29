@@ -120,7 +120,7 @@
     body: "static defaultProps = {\n\t${1}: ${2}\n}"
 
   "React: class skeleton":
-    prefix: "_cer"
+    prefix: "_c"
     body: "import React, { Component } from 'react';\n\nclass ${1} extends Component {\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
 
   "React: pure class skeleton":
@@ -128,7 +128,7 @@
     body: "import React, { PureComponent } from 'react';\n\nclass ${1} extends PureComponent {\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
 
   "React: Stateless Component":
-    prefix: "_rsc"
+    prefix: "_f"
     body: "import React from 'react';\n\nconst ${1} = ({${2}}) => (\n\t<div>${4}</div>\n);\n\nexport default ${1};"
 
   "React: Stateless Component PropTypes":
