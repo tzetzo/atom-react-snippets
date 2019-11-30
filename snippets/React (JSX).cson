@@ -60,8 +60,12 @@
     body: "componentDidMount() {\n\t${1}\n}${2}"
 
   "React: ErrorBoundary skeleton":
-    prefix: "eb"
+    prefix: "ee"
     body: "import React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n\tstate = { hasError: false }; \n\n\tstatic getDerivedStateFromError(error) {\n\t\t// Update state so the next render will show the fallback UI.\n\t\treturn { hasError: true };\n\t}\n\n\tcomponentDidCatch(error, errorInfo) {\n\t\t// You can also log the error to an error reporting service\n\t\tlogErrorToMyService(error, errorInfo);\n\t}\n\n\trender() {\n\t\tif (this.state.hasError) {\n\t\t\t// You can render any custom fallback UI\n\t\t\treturn <h1>Something went wrong.</h1>;\n\t\t}\n\n\t\treturn this.props.children;\n\t}\n}\n\nexport default ErrorBoundary;"
+
+  "React: HOC skeleton":
+    prefix: "hh"
+    body: "import React, { Component } from 'react';\n\nfunction with${1}(WrappedComponent) {\n\treturn class extends React.Component {\n\t\tstate = {\n\t\t\tdata: {}\n\t\t};\n\n\t\tcomponentDidMount() {}\n\n\t\trender() {\n\t\t\treturn <WrappedComponent data={this.state.data} {...this.props} />;\n\t\t}\n\t};\n}\n\nexport default with${1};"
 
   "React: componentWillMount() { ... }":
     prefix: "_cwm"
