@@ -61,7 +61,7 @@
 
   "React: ErrorBoundary skeleton":
     prefix: "eb"
-    body: "import React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ErrorBoundary;"
+    body: "import React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n\tstate = { hasError: false }; \n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ErrorBoundary;"
 
   "React: componentWillMount() { ... }":
     prefix: "_cwm"
