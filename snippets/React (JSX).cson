@@ -65,7 +65,7 @@
 
   "React: HOC skeleton":
     prefix: "hh"
-    body: "import React, { Component } from 'react';\n\nfunction with${1}(WrappedComponent) {\n\treturn class extends React.Component {\n\t\tstate = {\n\t\t\tdata: {}\n\t\t};\n\n\t\tcomponentDidMount() {}\n\n\t\trender() {\n\t\t\treturn <WrappedComponent data={this.state.data} {...this.props} />;\n\t\t}\n\t};\n}\n\nexport default with${1};"
+    body: "import React, { Component } from 'react';\n\nfunction with${1}(WrappedComponent) {\n\treturn class extends React.Component {\n\t\tstate = {\n\t\t\tdata: {}\n\t\t};\n\n\t\tcomponentDidMount() {}\n\n\t\thandleClick = () => {};\n\n\t\trender() {\n\t\t\treturn (\n\t\t\t\t<WrappedComponent\n\t\t\t\t\tdata={this.state.data}\n\t\t\t\t\thandleClick={this.handleClick}\n\t\t\t\t\t{...this.props}\n\t\t\t\t/>\n\t\t\t);\n\t\t}\n\t};\n}\n\nexport default with${1};"
 
   "React: componentWillMount() { ... }":
     prefix: "_cwm"
