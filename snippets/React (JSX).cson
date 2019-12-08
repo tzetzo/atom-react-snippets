@@ -327,3 +327,8 @@
   "React: index.js skeleton":
     prefix: "index.js"
     body: "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport { Provider } from 'react-redux';\nimport { createStore, applyMiddleware, compose } from 'redux';\nimport reduxThunk from 'redux-thunk';\n\nimport reducers from './reducers';\nimport App from './components/App';\n\nconst composeEnhancers =\n\tprocess.env.NODE_ENV === 'development'\n\t\t? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose\n\t\t: compose;\n\nconst store = createStore(\n\treducers,\n\tcomposeEnhancers(applyMiddleware(reduxThunk))\n);\n\nReactDOM.render(\n\t<Provider store={store}>\n\t\t<App />\n\t</Provider>,\n\tdocument.getElementById('root')\n);"
+
+  "React: App.js skeleton":
+    prefix: "App.js"
+    body: "import React from 'react';\nimport { Router, Route, Switch } from 'react-router-dom';\n\n// import Header from './Header';\n// import StreamList from './streams/StreamList';\n// import StreamCreate from './streams/StreamCreate';\n// import StreamEdit from './streams/StreamEdit';\nimport history from '../history';\n\nconst App = () => {\n\treturn (\n\t\t<div className=''>\n\t\t\t<Router history={history}>\n\t\t\t\t<div>\n\t\t\t\t\t{/*<Header />*/}\n\t\t\t\t\t<Switch>
+    \n\t\t\t\t\t\t{/*<Route path='/' exact component={StreamList} />\n\t\t\t\t\t\t<Route path='/streams/new' exact component={StreamCreate} />\n\t\t\t\t\t\t<Route path='/streams/edit/:id' exact component={StreamEdit} />*/}\n\t\t\t\t\t</Switch>\n\t\t\t\t</div>\n\t\t\t</Router>\n\t\t</div>\n\t);\n};\n\n export default App;"
