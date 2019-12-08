@@ -303,7 +303,7 @@
 
   "React: Function Component skeleton":
     prefix: "fc"
-    body: "//import React from 'react';\n\n//const ${1} = ({${2}}) => (\n\t//<div>${4}</div>\n//);\n\n//export default ${1};\n\n\n\nimport React from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nconst ${1} = ({}) => (\n\t<div></div>\n);\n\nconst mapStateToProps = ({ auth }) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
+    body: "//import React from 'react';\n\n//const ${1} = ({${2}}) => (\n\t//<div>${4}</div>\n//);\n\n//export default ${1};\n\n\n\nimport React from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nconst ${1} = ({}) => (\n\t<div></div>\n);\n\nconst mapStateToProps = ({ auth }, ownProps) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
 
   "React: Class Component skeleton":
     prefix: "cc"
@@ -311,7 +311,7 @@
 
   "React: Container skeleton":
     prefix: "container"
-    body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\tcomponentDidMount() {}\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
+    body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\tcomponentDidMount() {}\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }, ownProps) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
 
   "React: constructor(props)":
     prefix: "constr"
