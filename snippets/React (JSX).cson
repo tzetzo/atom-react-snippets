@@ -340,3 +340,7 @@
   "React: index.js reducers":
     prefix: "indexreducers"
     body: "import { combineReducers } from 'redux';\n//import { reducer as formReducer } from 'redux-form';\n\n//import authReducer from './authReducer';\n\nexport default combineReducers({\n\t//auth: authReducer, //temp: () => 'temp'\n\t//form: formReducer\n});"
+
+  "React: reducer skeleton":
+    prefix: "reducer"
+    body: "//import { SIGN_IN, SIGN_OUT } from '../actions/types';\n\nconst INITIAL_STATE = {\n\t//isSignedIn: null,\n\t//userId: null\n};\n\nexport default (state = INITIAL_STATE, action) => {\n\tswitch (action.type) {\n\t\t//case SIGN_IN:\n\t\t\t//return { ...state, isSignedIn: true, userId: action.payload };\n\t\t//case SIGN_OUT:\n\t\t\t//return { ...state, isSignedIn: false, userId: null };\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};"
