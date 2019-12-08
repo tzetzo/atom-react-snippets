@@ -307,11 +307,11 @@
 
   "React: Class Component skeleton":
     prefix: "cc"
-    body: "import React, { Component } from 'react';\n\nclass ${1} extends Component {\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
+    body: "import React, { Component } from 'react';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\tcomponentDidMount() {}\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
 
   "React: Container skeleton":
     prefix: "container"
-    body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\n\tcomponentDidMount() {}\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
+    body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\tcomponentDidMount() {}\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
 
   "React: constructor(props)":
     prefix: "constr"
