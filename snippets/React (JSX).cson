@@ -323,3 +323,7 @@
   "React: PropType shape required":
     prefix: "_ptshr",
     body: "PropTypes.shape({${1}}).isRequired,"
+
+  "React: index.js skeleton":
+    prefix: "index.js"
+    body: "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport { Provider } from 'react-redux';\nimport { createStore, applyMiddleware, compose } from 'redux';\nimport reduxThunk from 'redux-thunk';\n\nimport reducers from './reducers';\nimport App from './components/App';\n\nconst composeEnhancers =\n\tprocess.env.NODE_ENV === 'development'\n\t\t? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose\n\t\t: compose;\n\nconst store = createStore(\n\treducers,\n\tcomposeEnhancers(applyMiddleware(reduxThunk))\n);\n\nReactDOM.render(\n\t<Provider store={store}>\n\t\t<App />\n\t</Provider>,\n\tdocument.getElementById('root')\n);"
