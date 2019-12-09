@@ -23,29 +23,6 @@
 
 
 
-  "React: Stateless Component Return":
-    prefix: "_rscr"
-    body: "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst ${1} = ({${2}}) => {\n\treturn (\n\t\t<div>${4}</div>\n\t);\n}\n\n${1}.propTypes = {\n\t${2}: PropTypes.${3}\n};\n\nexport default ${1};"
-
-  "React: Stateless Component Click":
-    prefix: "_rscc"
-    body: "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst ${1} = ({${2}}) => {\n\tconst handleClick = () => {};\n\treturn (\n\t\t<div onClick={handleClick}>${4}</div>\n\t);\n}\n\n${1}.propTypes = {\n\t${2}: PropTypes.${3}\n};\n\nexport default ${1};"
-
-  "React: Stateless Function":
-    prefix: "_rsf"
-    body: "const ${1} = ({${2}}) => (\n\t<div>{${2}}</div>\n);"
-
-  "React: Component displayName":
-    prefix: "_cdn"
-    body: "${1}.displayName = '${1}';"
-
-  "React: render() { return ... }":
-    prefix: "_ren"
-    body: "render() {\n\treturn (\n\t\t${1:<div></div>}\n\t);\n}"
-
-  "React: setState({ ... })":
-    prefix: "_sst"
-    body: "this.setState({\n\t${1}: ${2}\n});"
 
   "React: useState(const [... , ...])":
     prefix: "_ust"
@@ -185,3 +162,11 @@
   "React: create React Router NavLink element":
     prefix: "navlink"
     body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<NavLink exact to='${1}' activeClassName={styles.active}>${2}</NavLink> // .active can be changed"
+
+  "React: setState({ ... })":
+    prefix: "ss"
+    body: "this.setState({\n\t${1}: ${2}\n});"
+
+  "React: setState({ ... })":
+    prefix: "sss"
+    body: "this.setState(\n\t(prevState, props) => ({\n\t\t${1}: prevState.${1} + 1\n\t}),\n\t() => console.log(this.state.${1})\n);"
