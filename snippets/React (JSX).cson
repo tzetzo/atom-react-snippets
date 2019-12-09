@@ -360,22 +360,22 @@
     prefix: "dp"
     body: "static defaultProps = {\n\t${1}: ${2}\n}"
 
-  "React: create React element":
-    prefix: "e"
-    body: "<${1} className=""></${1}>"
-
-  "React: create React controlled input element":
-    prefix: "input"
-    body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label>${2}</label>\n\t<input type='text' value={this.state.${1}} onChange={this.handleChange} />\n</div>"
-
-  "React: create React image element":
-    prefix: "img"
-    body: "// <img className='' alt={} src={}  />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className='' alt={} src={${1}} />"
-
-  "React: create React Router Link element":
-    prefix: "link"
-    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<Link to='${1}' className=''>${2}</Link>"
-
-  "React: create React Router NavLink element":
-    prefix: "navlink"
-    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<NavLink exact to='${1}' activeClassName={styles.active}>${2}</NavLink> // .active can be changed"
+  # "React: create React element":
+  #   prefix: "e"
+  #   body: "<${1} className=""></${1}>"
+  #
+  # "React: create React controlled input element":
+  #   prefix: "input"
+  #   body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label>${2}</label>\n\t<input type='text' value={this.state.${1}} onChange={this.handleChange} />\n</div>"
+  #
+  # "React: create React image element":
+  #   prefix: "img"
+  #   body: "// <img className='' alt={} src={}  />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className='' alt={} src={${1}} />"
+  #
+  # "React: create React Router Link element":
+  #   prefix: "link"
+  #   body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<Link to='${1}' className=''>${2}</Link>"
+  #
+  # "React: create React Router NavLink element":
+  #   prefix: "navlink"
+  #   body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<NavLink exact to='${1}' activeClassName={styles.active}>${2}</NavLink> // .active can be changed"
