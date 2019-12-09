@@ -360,10 +360,10 @@
     prefix: "dp"
     body: "static defaultProps = {\n\t${1}: ${2}\n}"
 
-  # "React: create React element":
-  #   prefix: "e"
-  #   body: "<${1} className=""></${1}>"
-  #
+  "React: create React element":
+    prefix: "e"
+    body: "<${1} className=''></${1}>"
+
   # "React: create React controlled input element":
   #   prefix: "input"
   #   body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label>${2}</label>\n\t<input type='text' value={this.state.${1}} onChange={this.handleChange} />\n</div>"
