@@ -353,7 +353,8 @@
 
   "React: static propTypes = { ... }":
     prefix: "pt"
-    body: "static propTypes = {\n\t${1}: PropTypes.${2:string}\n}"
+    body: "static propTypes = {\n\t${1}: PropTypes.${2:string}\n}\n// PropTypes.array//.isRequired\n// PropTypes.bool//.isRequired\n// PropTypes.func//.isRequired\n// PropTypes.number//.isRequired\n// PropTypes.object//.isRequired\n// PropTypes.string//.isRequired\n\n// Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types:\n// PropTypes.node//.isRequired\n\n// A React element:\n// PropTypes.element//.isRequired\n\n// You can also declare that a prop is an instance of a class. This uses JS's instanceof operator:\n// PropTypes.instanceOf(ClassNameHere)//.isRequired\n\n// You can ensure that your prop is limited to specific values by treating it as an enum:\n// PropTypes.oneOf(['News', 'Photos'])//.isRequired\n\n// An object that could be one of many types:\n// PropTypes.oneOfType([PropTypes.string, PropTypes.number])//.isRequired\n\n// An array of a certain type:\n// PropTypes.arrayOf(PropTypes.number)//.isRequired\n\n
+    // An object with property values of a certain type:\n// PropTypes.objectOf(PropTypes.number)//.isRequired\n\n// An object taking on a particular shape:\n// PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// An object with warnings on extra properties:\n// PropTypes.exact({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// A value of any data type:\n// PropTypes.any.isRequired"
 
   "React: static defaultProps = { ... }":
     prefix: "dp"
