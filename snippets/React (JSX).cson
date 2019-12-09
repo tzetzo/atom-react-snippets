@@ -103,14 +103,6 @@
     prefix: "_scct"
     body: "static contextTypes = {\n\t${1}: PropTypes.${2:string}\n}"
 
-  "React: static propTypes = { ... }":
-    prefix: "_scpt"
-    body: "static propTypes = {\n\t${1}: PropTypes.${2:string}\n}"
-
-  "React: static defaultProps = { ... }":
-    prefix: "_scdp"
-    body: "static defaultProps = {\n\t${1}: ${2}\n}"
-
   "React: pure class skeleton":
     prefix: "_cepr"
     body: "import React, { PureComponent } from 'react';\n\nclass ${1} extends PureComponent {\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
@@ -314,7 +306,7 @@
     body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\t// static getDerivedStateFromProps(props,state) {}; static propTypes = {onHandleSubmit: PropTypes.func}; static defaultProps = {message: 'Loading...'}\n\t// componentDidMount() {}\n\t// shouldComponentUpdate(nextProps, nextState) {}\n\t// getSnapshotBeforeUpdate(prevProps, prevState) {}\n\t// componentDidUpdate(prevProps, prevState, snapshot) {}\n\t// componentWillUnmount() {}\n\t// click handlers or event handlers like onClickSubmit() or onChangeDescription()\n\t// getter methods for render like getSelectReason() or getFooterContent()\n\t// optional render methods like renderNavigation() or renderProfilePicture()\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }, ownProps) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
 
   "React: constructor(props)":
-    prefix: "constr"
+    prefix: "constructor"
     body: "constructor(props) {\n\tsuper(props);\n\t${1:this.state = ${2};}\n}"
 
   "React: componentDidMount() { ... }":
@@ -358,3 +350,11 @@
     prefix: "ac"
     body: "//import axios from 'axios';\nimport history from '../history';\n//import { SIGN_IN, SIGN_OUT } from './types';\n\nexport const signInOut = (isSignedIn, userId) => {\n\tif (isSignedIn) {\n\t\treturn {\n\t\t\ttype: SIGN_IN,\n\t\t\tpayload: userId\n\t\t};\n\t} else {\n\t\treturn {\n\t\t\ttype: SIGN_OUT\n\t\t};\n\t}\n};\n\nexport const createStream = formValues => async (dispatch, getState) => {
       \n\t//formValues.userId = getState().auth.userId;\n\t//const response = await axios.post('http://localhost:3001/streams', formValues);\n\tdispatch({\n\t\t//type: CREATE_STREAM,\n\t\t//payload: response.data\n\t});\n\thistory.push('/');\n};"
+
+  "React: static propTypes = { ... }":
+    prefix: "pt"
+    body: "static propTypes = {\n\t${1}: PropTypes.${2:string}\n}"
+
+  "React: static defaultProps = { ... }":
+    prefix: "dp"
+    body: "static defaultProps = {\n\t${1}: ${2}\n}"
