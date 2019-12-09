@@ -353,9 +353,29 @@
 
   "React: static propTypes = { ... }":
     prefix: "pt"
-    body: "// npm install prop-types --save\n// import PropTypes from 'prop-types';\nstatic propTypes = {\n\t${1}: PropTypes.${2:string}\n}\n// PropTypes.array//.isRequired\n// PropTypes.bool//.isRequired\n// PropTypes.func//.isRequired\n// PropTypes.number//.isRequired\n// PropTypes.object//.isRequired\n// PropTypes.string//.isRequired\n\n// Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types:\n// PropTypes.node//.isRequired\n\n// A React element:\n// PropTypes.element//.isRequired\n\n// You can also declare that a prop is an instance of a class. This uses JS's instanceof operator:\n// PropTypes.instanceOf(ClassNameHere)//.isRequired\n\n// You can ensure that your prop is limited to specific values by treating it as an enum:\n// PropTypes.oneOf(['News', 'Photos'])//.isRequired\n\n// An object that could be one of many types:\n// PropTypes.oneOfType([PropTypes.string, PropTypes.number])//.isRequired\n\n// An array of a certain type:\n// PropTypes.arrayOf(PropTypes.number)//.isRequired\n\n
-    // An object with property values of a certain type:\n// PropTypes.objectOf(PropTypes.number)//.isRequired\n\n// An object taking on a particular shape:\n// PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// An object with warnings on extra properties:\n// PropTypes.exact({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// A value of any data type:\n// PropTypes.any.isRequired"
+    body: "// npm install prop-types --save\n// import PropTypes from 'prop-types';\nstatic propTypes = {\n\t${1}: PropTypes.${2:string}\n}\n// PropTypes.array//.isRequired\n// PropTypes.bool//.isRequired\n// PropTypes.func//.isRequired\n// PropTypes.number//.isRequired\n// PropTypes.object//.isRequired\n// PropTypes.string//.isRequired\n\n// Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types:\n// PropTypes.node//.isRequired\n\n// A React element:\n// PropTypes.element//.isRequired\n\n// You can also declare that a prop is an instance of a class. This uses JS's instanceof operator:\n// PropTypes.instanceOf(ClassNameHere)//.isRequired\n\n// You can ensure that your prop is limited to specific values by treating it as an enum:\n// PropTypes.oneOf(['News', 'Photos'])//.isRequired\n\n// An object that could be one of many types:\n// PropTypes.oneOfType([PropTypes.string, PropTypes.number])//.isRequired\n\n
+    // An array of a certain type:\n// PropTypes.arrayOf(PropTypes.number)//.isRequired\n\n// An object with property values of a certain type:\n// PropTypes.objectOf(PropTypes.number)//.isRequired\n\n// An object taking on a particular shape:\n// PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// An object with warnings on extra properties:\n// PropTypes.exact({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// A value of any data type:\n// PropTypes.any.isRequired"
 
   "React: static defaultProps = { ... }":
     prefix: "dp"
     body: "static defaultProps = {\n\t${1}: ${2}\n}"
+
+  "React: create React element":
+    prefix: "e"
+    body: "<${1} className=""></${1}>"
+
+  "React: create React controlled input element":
+    prefix: "input"
+    body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label>${2}</label>\n\t<input type='text' value={this.state.${1}} onChange={this.handleChange} />\n</div>"
+
+  "React: create React image element":
+    prefix: "img"
+    body: "// <img className='' alt={} src={}  />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className='' alt={} src={${1}} />"
+
+  "React: create React Router Link element":
+    prefix: "link"
+    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<Link to='${1}' className=''>${2}</Link>"
+
+  "React: create React Router NavLink element":
+    prefix: "navlink"
+    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<NavLink exact to='${1}' activeClassName={styles.active}>${2}</NavLink> // .active can be changed"
