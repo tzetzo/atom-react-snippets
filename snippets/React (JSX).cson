@@ -7,63 +7,6 @@
     prefix: "_in"
     body: "import { ${1} } from '${2}';"
 
-  "React: Import with useState":
-    prefix: "_irs",
-    body: "import React, { useState } from 'react';"
-
-  "React: Import with useEffect":
-    prefix: "_ire",
-    body: "import React, { useEffect } from 'react';"
-
-  "React: Import with useState and useEffect":
-    prefix: "_irse",
-    body: "import React, { useState, useEffect } from 'react';"
-
-
-
-
-
-
-  "React: useState(const [... , ...])":
-    prefix: "_ust"
-    body: "const [${1}, set${1/(.+)/\\u$1/}] = useState(${2})"
-
-  "React: this.props.":
-    prefix: "_props"
-    body: "this.props.${1}"
-
-  "React: destruct this.props.":
-    prefix: "_dprops"
-    body: "const { ${1} } = this.props;"
-
-  "React: this.state.":
-    prefix: "_state"
-    body: "this.state.${1}"
-
-  "React: destruct this.state.":
-    prefix: "_dstate"
-    body: "const { ${1} } = this.state;"
-
-  "React: destruct object.":
-    prefix: "_dobj"
-    body: "const { ${1} } = ${2};"
-
-  "React: render(component, container, [callback])":
-    prefix: "_rrc"
-    body: "React.render(${1:<$2 />}, ${3:document.body}${4:, ${5:callback}});"
-
-  "React: Fragment":
-    prefix: "_frag"
-    body: "<React.Fragment>\n\t$1\n</React.Fragment>"
-
-  "React: class Foo extends Bar":
-    prefix: "_clss"
-    body: "class ${1:Foo} extends ${2:React.Component} {\n\trender() {\n\t\t${3}\n\t}\n}"
-
-  "React: dangerouslySetInnerHTML":
-    prefix: "_dnghtml"
-    body: "dangerouslySetInnerHTML={{__html: ${1}}}"
-
 
 
 
@@ -170,3 +113,11 @@
   "React: setState({ ... })":
     prefix: "sss"
     body: "this.setState(\n\t(prevState, props) => ({\n\t\t${1}: prevState.${1} + 1\n\t}),\n\t() => console.log(this.state.${1})\n);"
+
+  "React: Fragment":
+    prefix: "f"
+    body: "<React.Fragment>\n\t$1\n</React.Fragment>"
+
+  "React: useState(const [... , ...])":
+    prefix: "us"
+    body: "// import React, { useState, useEffect } from 'react';\nconst [${1}, set${2}] = useState(${3});\n\nuseEffect(() => {\n\t// window.addEventListener("mousemove", logMousePosition);\n\n\t// axios.get(`${4}`)\n\t//   .then(res => { set${2}(res.data) })\n\t//   .catch(err => { console.log(err) })\n\t// OR\n\t// (async () => {\n\t//   try {\n\t//     const res = await axios.get(`${4}`);\n\t//     set${2}(res.data);\n\t//   } catch(err) {\n\t//     console.log(err);\n\t//   }\n\t// })()\n\n\treturn () => { //===componentWillUnmount/n/t/t// window.removeEventListener("mousemove", logMousePosition);\n\t};\n}, []); //dependency array; === componentDidMount"
