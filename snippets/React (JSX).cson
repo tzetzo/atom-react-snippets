@@ -77,7 +77,7 @@
 
   "React: create React controlled input element":
     prefix: "input"
-    body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label>${2}</label>\n\t<input type='text' value={this.state.${1}} onChange={this.handleChange} />\n</div>"
+    body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className=''>\n\t<label htmlFor={${3}}>${2}</label>\n\t<input type='text' id={${3}} value={this.state.${1}} onChange={this.handleChange} />\n</div>"
 
   "React: create React image element":
     prefix: "img"
