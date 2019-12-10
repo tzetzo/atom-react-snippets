@@ -1,7 +1,4 @@
 ".source.js, .source.jsx, .source.ts, .source.tsx, .source.flow":
-  "React: import from":
-    prefix: "tt"
-    body: "import { ${1} } from '${2}';"
 
   "React: Function Component skeleton":
     prefix: "fc"
@@ -73,6 +70,10 @@
   "React: defaultProps = { ... }":
     prefix: "dp"
     body: "// inside Class Components only:\nstatic defaultProps = {\n\t${1}: ${2}\n}\n// OR\n// outside Function Components & Class Components:\n${3}.defaultProps = {\n\t${1}: ${2}\n};"
+
+  "React: import from":
+    prefix: "tt"
+    body: "import { ${1} } from '${2}';"
 
   "React: create React element":
     prefix: "e"
