@@ -26,7 +26,7 @@ The **⇥** means the `TAB` key
 | -------------- | --------------------- |
 | `index→`       | index.js              |
 | `app`          | App.js                |
-| `''→`          | import from           |
+| `→`            | import from           |
 | `fc→`          | function component    |
 | `cc→`          | class component       |
 | `container→`   | container             |
