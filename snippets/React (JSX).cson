@@ -1,9 +1,6 @@
 ".source.js, .source.jsx, .source.ts, .source.tsx, .source.flow":
-  "React: import default from":
-    prefix: "i"
-    body: "import ${1} from '${2}';"
 
-  "React: import named from":
+  "React: import from":
     prefix: "ii"
     body: "import { ${1} } from '${2}';"
 
