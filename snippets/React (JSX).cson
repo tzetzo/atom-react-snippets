@@ -47,7 +47,7 @@
 
   "React: history object":
     prefix: "h"
-    body: "//auto installed with react-router-dom as separate library\nimport { createBrowserHistory } from 'history';\n\n//create a history object that we can access anywhere in our app for programmatic navigation\n//otherwise we only have access to it inside a Component through this.props.history\n//need to replace <BrowserRouter> with <Router> inside App.js\nexport default createBrowserHistory();"
+    body: "//import { Router, Route, Switch } from 'react-router-dom'; import history from '../history'; & <Router history={history}> should be used instead of BrowserRouter\n//auto installed with react-router-dom as separate library\nimport { createBrowserHistory } from 'history';\n\n//create a history object that we can access anywhere in our app for programmatic navigation\n//otherwise we only have access to it inside a Component through this.props.history\n//need to replace <BrowserRouter> with <Router> inside App.js\nexport default createBrowserHistory();"
 
   "React: index.js reducers":
     prefix: "ir"
