@@ -73,7 +73,7 @@
 
   "React: create React element":
     prefix: "e"
-    body: "<${1} className=''></${1}>"
+    body: "<${1} className={`btn-panel ${this.props.visible ? 'show' : 'hidden'}`}></${1}>"
 
   "React: create React controlled input element":
     prefix: "input"
