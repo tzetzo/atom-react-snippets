@@ -72,7 +72,7 @@
     body: "// inside Class Components only:\nstatic defaultProps = {\n\t${1}: ${2}\n}\n// OR\n// outside Function Components & Class Components:\n${3}.defaultProps = {\n\t${1}: ${2}\n};"
 
   "React: import from":
-    prefix: "tt"
+    prefix: "if"
     body: "import { ${1} } from '${2}';"
 
   "React: create React element":
