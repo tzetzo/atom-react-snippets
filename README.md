@@ -4,7 +4,8 @@ An [Atom](https://atom.io/) snippet library for React.
 
 ## Install
 
-Terminal/CMD -> apm install https://github.com/tzetzo/tzetzo-react-snippets.git
+1. Atom -> Setings -> Install -> language-babel package
+2. Terminal/CMD -> apm install https://github.com/tzetzo/tzetzo-react-snippets.git
 
 Restart Atom
 
@@ -26,7 +27,7 @@ The **⇥** means the `TAB` key
 | -------------- | --------------------- |
 | `index→`       | index.js              |
 | `app→`         | App.js                |
-| `t→`           | import from           |
+| `tt→`          | import from           |
 | `fc→`          | function component    |
 | `cc→`          | class component       |
 | `container→`   | container             |
