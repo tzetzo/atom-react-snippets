@@ -1,7 +1,7 @@
 ".source.js, .source.jsx, .source.ts, .source.tsx, .source.flow":
 
   "React: import from":
-    prefix: "i"
+    prefix: "iiii"
     body: "import { ${1} } from '${2}';"
 
   "React: Function Component skeleton":
