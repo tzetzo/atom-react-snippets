@@ -81,7 +81,7 @@
 
   "React: create React image element":
     prefix: "img"
-    body: "// <img className='' alt={} src={}  />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className='' alt={} src={${1}} />"
+    body: "// <img className='' alt={} src={'images/' + this.props.image} />\n// OR\n// <img className='' alt={} src={`images/${this.props.image}`} />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className='' alt={} src={${1}} />"
 
   "React: create React Router Link element":
     prefix: "link"
