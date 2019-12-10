@@ -25,8 +25,8 @@ The **⇥** means the `TAB` key
 | Trigger        | Content               |
 | -------------- | --------------------- |
 | `index→`       | index.js              |
-| `app`          | App.js                |
-| `iiii→`        | import from           |
+| `app→`         | App.js                |
+| `t→`           | import from           |
 | `fc→`          | function component    |
 | `cc→`          | class component       |
 | `container→`   | container             |

@@ -1,6 +1,6 @@
 ".source.js, .source.jsx, .source.ts, .source.tsx, .source.flow":
   "React: import from":
-    prefix: "iiii"
+    prefix: "t"
     body: "import { ${1} } from '${2}';"
 
   "React: Function Component skeleton":
