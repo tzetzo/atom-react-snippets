@@ -46,6 +46,7 @@ The **⇥** means the `TAB` key
 | `ss→`          | setState              |
 | `sss→`         | setState async        |
 | `us→`          | useState & useEffect  |
+| `ur→`          | useReducer            |
 |                |                       |
 | `constructor→` | constructor           |
 | `cdm→`         | componentDidMount     |
