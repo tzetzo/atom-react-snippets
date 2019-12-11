@@ -1,0 +1,113 @@
+".source.js, .source.jsx, .source.ts, .source.tsx, .source.flow":
+
+  "React: Function Component skeleton":
+    prefix: "fc"
+    body: "//import React from 'react';\n\n//const ${1} = ({${2}}) => (\n\t//<div>${4}</div>\n//);\n\n//export default ${1};\n\n\n\nimport React from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nconst ${1} = ({}) => (\n\t<div></div>\n);\n\nconst mapStateToProps = ({ auth }, ownProps) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
+
+  "React: Class Component skeleton":
+    prefix: "cc"
+    body: "import React, { Component } from 'react';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\t// static getDerivedStateFromProps(props,state) {}; static propTypes = {onHandleSubmit: PropTypes.func}; static defaultProps = {message: 'Loading...'}\n\t// componentDidMount() {}\n\t// shouldComponentUpdate(nextProps, nextState) {}\n\t// getSnapshotBeforeUpdate(prevProps, prevState) {}\n\t// componentDidUpdate(prevProps, prevState, snapshot) {}\n\t// componentWillUnmount() {}\n\t// click handlers or event handlers like onClickSubmit() or onChangeDescription()\n\t// getter methods for render like getSelectReason() or getFooterContent()\n\t// optional render methods like renderNavigation() or renderProfilePicture()\n\n\trender() {\n\t\treturn (\n\t\t\t${2:<div></div>}\n\t\t);\n\t}\n\n}\n\nexport default ${1};"
+
+  "React: Container skeleton":
+    prefix: "container"
+    body: "import React, { Component } from 'react';\nimport { connect } from 'react-redux';\n//import { signInOut } from '../actions';\n\nclass ${1} extends Component {\n\tstate = {};\n\n\t// static getDerivedStateFromProps(props,state) {}; static propTypes = {onHandleSubmit: PropTypes.func}; static defaultProps = {message: 'Loading...'}\n\t// componentDidMount() {}\n\t// shouldComponentUpdate(nextProps, nextState) {}\n\t// getSnapshotBeforeUpdate(prevProps, prevState) {}\n\t// componentDidUpdate(prevProps, prevState, snapshot) {}\n\t// componentWillUnmount() {}\n\t// click handlers or event handlers like onClickSubmit() or onChangeDescription()\n\t// getter methods for render like getSelectReason() or getFooterContent()\n\t// optional render methods like renderNavigation() or renderProfilePicture()\n\n\trender() {\n\t\treturn <div></div>;\n\t}\n}\n\nconst mapStateToProps = ({ auth }, ownProps) => {\n\treturn { isSignedIn: auth.isSignedIn };\n};\n\nexport default connect(\n\tmapStateToProps,\n\t//{ signInOut }\n)(${1});"
+
+  "React: constructor(props)":
+    prefix: "constructor"
+    body: "constructor(props) {\n\tsuper(props);\n\t${1:this.state = ${2};}\n}"
+
+  "React: componentDidMount() { ... }":
+    prefix: "cdm"
+    body: "componentDidMount() {\n\t${1}\n}${2}"
+
+  "React: shouldComponentUpdate(np, ns) { ... }":
+    prefix: "scu"
+    body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}${2}"
+
+  "React: componentDidUpdate(pp, ps) { ... }":
+    prefix: "cdu"
+    body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}${2}"
+
+  "React: ErrorBoundary skeleton":
+    prefix: "eb"
+    body: "import React, { Component } from 'react';\n\nclass ErrorBoundary extends Component {\n\tstate = { hasError: false }; \n\n\tstatic getDerivedStateFromError(error) {\n\t\t// Update state so the next render will show the fallback UI.\n\t\treturn { hasError: true };\n\t}\n\n\tcomponentDidCatch(error, errorInfo) {\n\t\t// You can also log the error to an error reporting service\n\t\tlogErrorToMyService(error, errorInfo);\n\t}\n\n\trender() {\n\t\tif (this.state.hasError) {\n\t\t\t// You can render any custom fallback UI\n\t\t\treturn <h1>Something went wrong.</h1>;\n\t\t}\n\n\t\treturn this.props.children;\n\t}\n}\n\nexport default ErrorBoundary;"
+
+  "React: HOC skeleton":
+    prefix: "hoc"
+    body: "import React, { Component } from 'react';\n\nfunction with${1}(WrappedComponent) {\n\treturn class extends React.Component {\n\t\tstate = {\n\t\t\tdata: {}\n\t\t};\n\n\t\tcomponentDidMount() {}\n\n\t\thandleClick = () => {};\n\n\t\trender() {\n\t\t\treturn (\n\t\t\t\t<WrappedComponent\n\t\t\t\t\tdata={this.state.data}\n\t\t\t\t\thandleClick={this.handleClick}\n\t\t\t\t\t{...this.props}\n\t\t\t\t/>\n\t\t\t);\n\t\t}\n\t};\n}\n\nexport default with${1};"
+
+  "React: index.js skeleton":
+    prefix: "index"
+    body: "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport { Provider } from 'react-redux';\nimport { createStore, applyMiddleware, compose } from 'redux';\nimport reduxThunk from 'redux-thunk';\n\n// Font Awesome:\n// npm install --save-dev @fortawesome/fontawesome-free     //https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers\n// import '@fortawesome/fontawesome-free/css/all.min.css';  //how to use: https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use\n// https://fontawesome.com/icons?d=gallery&m=free     -> choose from menu on the left -> click any icon image -> click 'Start using this icon'\n\nimport reducers from './reducers';\nimport App from './components/App';\n\nconst composeEnhancers =\n\tprocess.env.NODE_ENV === 'development'\n\t\t? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose\n\t\t: compose;\n\nconst store = createStore( //export default store to access it outside a Component\n\treducers,\n\t//initialState, //const initialState = {todos: [{ id: 123, name: 'example', completed: false }]}\n\tcomposeEnhancers(applyMiddleware(reduxThunk))\n);\n\nReactDOM.render(\n\t<Provider store={store}>\n\t\t<App />\n\t</Provider>,\n\tdocument.getElementById('root')\n);"
+
+  "React: App.js skeleton":
+    prefix: "app"
+    body: "import React from 'react';\nimport { Router, Route, Switch } from 'react-router-dom';\n\n// import Header from './Header';\n// import StreamList from './streams/StreamList';\n// import StreamCreate from './streams/StreamCreate';\n// import StreamEdit from './streams/StreamEdit';\nimport history from '../history';\n\nconst App = () => {\n\treturn (\n\t\t<div className={''}>\n\t\t\t<Router history={history}>\n\t\t\t\t<div>\n\t\t\t\t\t{/*<Header />*/}\n\t\t\t\t\t<Switch>
+    \n\t\t\t\t\t\t{/*<Route path='/' exact component={StreamList} />\n\t\t\t\t\t\t<Route path='/streams/new' exact component={StreamCreate} />\n\t\t\t\t\t\t<Route path='/streams/edit/:id' exact component={StreamEdit} />*/}\n\t\t\t\t\t</Switch>\n\t\t\t\t</div>\n\t\t\t</Router>\n\t\t</div>\n\t);\n};\n\nexport default App;"
+
+  "React: history object":
+    prefix: "h"
+    body: "//import { Router, Route, Switch } from 'react-router-dom'; import history from '../history'; & <Router history={history}> should be used instead of BrowserRouter\n//auto installed with react-router-dom as separate library\nimport { createBrowserHistory } from 'history';\n\n//create a history object that we can access anywhere in our app for programmatic navigation\n//otherwise we only have access to it inside a Component through this.props.history\n//need to replace <BrowserRouter> with <Router> inside App.js\nexport default createBrowserHistory();"
+
+  "React: index.js reducers":
+    prefix: "ir"
+    body: "import { combineReducers } from 'redux';\n//import { reducer as formReducer } from 'redux-form';\n\n//import authReducer from './authReducer';\n\nexport default combineReducers({\n\t//auth: authReducer, //temp: () => 'temp'\n\t//form: formReducer\n});"
+
+  "React: reducer skeleton":
+    prefix: "r"
+    body: "//import { SIGN_IN, SIGN_OUT } from '../actions/types';\n\nconst INITIAL_STATE = {\n\t//isSignedIn: null,\n\t//userId: null\n};\n\nexport default (state = INITIAL_STATE, action) => {\n\tswitch (action.type) {\n\t\t//case SIGN_IN:\n\t\t\t//return { ...state, isSignedIn: true, userId: action.payload };\n\t\t//case SIGN_OUT:\n\t\t\t//return { ...state, isSignedIn: false, userId: null };\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};"
+
+  "React: action creators skeleton":
+    prefix: "ac"
+    body: "//import axios from 'axios';\nimport history from '../history';\n//import { SIGN_IN, SIGN_OUT } from './types';\n\nexport const signInOut = (isSignedIn, userId) => {\n\tif (isSignedIn) {\n\t\treturn {\n\t\t\ttype: SIGN_IN,\n\t\t\tpayload: userId\n\t\t};\n\t} else {\n\t\treturn {\n\t\t\ttype: SIGN_OUT\n\t\t};\n\t}\n};\n\nexport const createStream = formValues => async (dispatch, getState) => {
+      \n\t//formValues.userId = getState().auth.userId;\n\t//const response = await axios.post('http://localhost:3001/streams', formValues);\n\tdispatch({\n\t\t//type: CREATE_STREAM,\n\t\t//payload: response.data\n\t});\n\thistory.push('/');\n};"
+
+  "React: propTypes = { ... }":
+    prefix: "pt"
+    body: "// npm install prop-types --save\n// import PropTypes from 'prop-types';\n\n// inside Class Components only:\nstatic propTypes = {\n\t${1}: PropTypes.string\n}\n// OR\n// outside Function Components & Class Components:\n${2}.propTypes = {\n\t${1}: PropTypes.string\n};\n\n// PropTypes.array//.isRequired\n// PropTypes.bool//.isRequired\n// PropTypes.func//.isRequired\n// PropTypes.number//.isRequired\n// PropTypes.object//.isRequired\n// PropTypes.string//.isRequired\n\n// Anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types:\n// PropTypes.node//.isRequired\n\n// A React element:\n// PropTypes.element//.isRequired\n\n// You can also declare that a prop is an instance of a class. This uses JS's instanceof operator:\n// PropTypes.instanceOf(ClassNameHere)//.isRequired\n\n// You can ensure that your prop is limited to specific values by treating it as an enum:\n// PropTypes.oneOf(['News', 'Photos'])//.isRequired\n\n// An object that could be one of many types:\n// PropTypes.oneOfType([PropTypes.string, PropTypes.number])//.isRequired\n\n
+    // An array of a certain type:\n// PropTypes.arrayOf(PropTypes.number)//.isRequired\n\n// An object with property values of a certain type:\n// PropTypes.objectOf(PropTypes.number)//.isRequired\n\n// An object taking on a particular shape:\n// PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// An object with warnings on extra properties:\n// PropTypes.exact({color: PropTypes.string, fontSize: PropTypes.number})//.isRequired\n\n// A value of any data type:\n// PropTypes.any.isRequired"
+
+  "React: defaultProps = { ... }":
+    prefix: "dp"
+    body: "// inside Class Components only:\nstatic defaultProps = {\n\t${1}: ${2}\n}\n// OR\n// outside Function Components & Class Components:\n${3}.defaultProps = {\n\t${1}: ${2}\n};"
+
+  "React: create React element":
+    prefix: "e"
+    body: "<${1} className={`btn-panel ${this.props.visible ? 'show' : 'hidden'}`}></${1}>"
+
+  "React: create React controlled input element":
+    prefix: "input"
+    body: "//handleChange = e => this.setState({${1}: e.target.value.toUpperCase()})\n<div className={''}>\n\t<label htmlFor={${3}}>${2}</label>\n\t<input type={'text'} id={${3}} value={this.state.${1}} onChange={this.handleChange} />\n</div>"
+
+  "React: create React image element":
+    prefix: "img"
+    body: "// <img className={''} alt={} src={'images/' + this.props.image} />\n// OR\n// <img className={''} alt={} src={`images/${this.props.image}`} />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className={''} alt={} src={${1}} />"
+
+  "React: create React Router Link element":
+    prefix: "link"
+    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<Link to={'${1}'} className={''}>${2}</Link>"
+
+  "React: create React Router NavLink element":
+    prefix: "navlink"
+    body: "// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom/docs/api\n<NavLink exact to={'${1}'} activeClassName={styles.active}>${2}</NavLink> // .active can be changed"
+
+  "React: setState({ ... })":
+    prefix: "ss"
+    body: "this.setState({\n\t${1}: ${2}\n});"
+
+  "React: setState async":
+    prefix: "sss"
+    body: "this.setState(\n\t(prevState, props) => ({\n\t\t${1}: prevState.${1} + 1\n\t}),\n\t() => console.log(this.state.${1})\n);"
+
+  "React: Fragment":
+    prefix: "f"
+    body: "<React.Fragment>\n\n</React.Fragment>"
+
+  "React: useState & useEffect":
+    prefix: "us"
+    body: "// import React, { useState, useEffect } from 'react';\nconst [${1}, set${2}] = useState(${3});\n\nuseEffect(() => {\n\t// window.addEventListener('mousemove', logMousePosition);\n\n\t// axios.get(`${4}`)\n\t//   .then(res => { set${2}(res.data) })\n\t//   .catch(err => { console.log(err) })\n\t// OR\n\t// (async () => {\n\t//   try {\n\t//     const res = await axios.get(`${4}`);\n\t//     set${2}(res.data);\n\t//   } catch(err) {\n\t//     console.log(err);\n\t//   }\n\t// })()\n\n\treturn () => { //===componentWillUnmount\n\t\t// window.removeEventListener('mousemove', logMousePosition);
+    \n\t}\n}, []); //dependency array; === componentDidMount"
+
+  "React: useReducer":
+    prefix: "ur"
+    body: "// import { useReducer } from 'react';\n\n// put above the function Component:\nconst initialState = { loading: true, post: {}, error: '' };\n\nconst reducer = (state, action) => {  //state & action can be any type\n\tswitch (action.type) {\n\t\tcase 'FETCH_SUCCESS':\n\t\t\treturn { loading: false, post: action.paylod, error: '' };\n\t\tcase 'FETCH_ERROR':\n\t\t\treturn { loading: false, post: {}, error: 'Something went wrong' };\n\t\tdefault:\n\t\t\treturn state;\n\t}\n};\n\n// Inside the function Component:\nconst [${1}, dispatch] = useReducer(reducer, initialState);\n// in useEffect() after http request call dispatch({ type: 'FETCH_SUCCESS', payload: response.data })\n//in the JSX use ${1}.loading, ${1},post, ${1}.error"
