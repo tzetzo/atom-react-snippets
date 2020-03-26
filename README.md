@@ -34,7 +34,8 @@ The **⇥** means the `TAB` key
 | `h→`           | history object        |
 | `ir→`          | index.js reducers     |
 | `r→`           | reducer               |
-| `ac→`          | action creators       |
+| `ac→`          | action creator        |
+| `aac→`         | async action creator  |
 |                |                       |
 | `e→`           | React element         |
 | `input→`       | controlled input      |
