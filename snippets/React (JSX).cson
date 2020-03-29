@@ -84,7 +84,7 @@
 
   "React: create React image element":
     prefix: "img"
-    body: "// Images should be inside the src folder!\n// <img alt="" src={require(`../images/${this.props.image}`)} />\n// OR\n// <img className={''} alt={} src={`images/${this.props.image}`} />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className={''} alt={} src={${1}} />"
+    body: "// Images should be inside the src folder!\n// <img alt='' src={require(`../images/${this.props.image}`)} />\n// OR\n// <img className={''} alt={} src={`images/${this.props.image}`} />\n// OR\n// import ${1} from '../assets/${2}.jpg';\n// <img className={''} alt={} src={${1}} />"
 
   "React: create React Router Link element":
     prefix: "link"
