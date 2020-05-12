@@ -1,5 +1,5 @@
 {
-  "name": "react-snippets",
+  "name": "tzetzo-react-snippets",
   "version": "1.2.0",
   "description": "Atom Snippets for React",
   "main": "./lib/react-snippets",
